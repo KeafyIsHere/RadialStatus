@@ -1,7 +1,6 @@
 #app-mount .wrapper-3t9DeA * {
   overflow: visible;
-  -webkit-mask: none;
-          mask: none;
+  mask: none;
 }
 #app-mount .wrapper-3t9DeA .dots-3Bkt3k {
   position: relative;
@@ -42,14 +41,15 @@
   width: 80px;
   height: 80px;
 }
+#app-mount .wrapper-3t9DeA[style*="width: 80px;"] img {
+  clip-path: inset(calc(var(--rs-large-spacing) + 1px) calc(var(--rs-large-spacing) + 1px) round var(--rs-avatar-shape));
+}
 #app-mount .wrapper-3t9DeA[style*="width: 80px;"][style*="width:80px;"]:after {
   left: unset;
   right: -2px;
   top: unset;
   bottom: -2px;
-  -webkit-transform: none;
-      -ms-transform: none;
-          transform: none;
+  transform: none;
 }
 #app-mount .wrapper-3t9DeA[style*="width: 32px;"] rect {
   width: 32px;
@@ -59,17 +59,20 @@
   y: -17;
 }
 #app-mount .wrapper-3t9DeA img {
-  border-radius: 50%;
-  -webkit-clip-path: inset(calc(var(--rs-small-spacing) + 1px) calc(var(--rs-small-spacing) + 1px) round var(--rs-avatar-shape));
-          clip-path: inset(calc(var(--rs-small-spacing) + 1px) calc(var(--rs-small-spacing) + 1px) round var(--rs-avatar-shape));
+  border-radius: var(--rs-avatar-shape);
+  clip-path: inset(calc(var(--rs-small-spacing) + 1px) calc(var(--rs-small-spacing) + 1px) round var(--rs-avatar-shape));
+}
+#app-mount .wrapper-3t9DeA svg[width="25"][height="15"] > rect {
+  rx: calc(var(--rs-avatar-shape) * 2) !important;
+  ry: calc(var(--rs-avatar-shape) * 2) !important;
 }
 #app-mount .wrapper-3t9DeA rect {
   x: 0;
   y: 0;
   width: 100%;
   height: 100%;
-  rx: 200%;
-  ry: 200%;
+  rx: var(--rs-avatar-shape) !important;
+  ry: var(--rs-avatar-shape) !important;
   fill: transparent;
   stroke-width: var(--rs-width);
 }
@@ -101,8 +104,7 @@
   overflow: visible;
 }
 #app-mount .avatarHint-1qgaV3 foreignObject {
-  -webkit-mask: none;
-          mask: none;
+  mask: none;
 }
 #app-mount .avatarHint-1qgaV3 .avatarHintInner-Dco91E {
   border-radius: 50% !important;
@@ -113,15 +115,16 @@
   margin-left: 1px;
 }
 #app-mount .message-1PNnaP .mask-1l8v16 img {
-  -webkit-clip-path: circle(calc(19px - var(--rs-small-spacing)));
-          clip-path: circle(calc(19px - var(--rs-small-spacing)));
+  clip-path: circle(calc(19px - var(--rs-small-spacing)));
 }
 #app-mount .memberOffline-2lN7gt img {
-  -webkit-clip-path: none !important;
-          clip-path: none !important;
+  clip-path: none !important;
 }
 #app-mount .header-QKLPzZ .wrapper-3t9DeA {
   margin-right: 20px !important;
+}
+#app-mount .offline-3nJYBR img {
+  clip-path: none !important;
 }
 
 #app-mount foreignObject[mask*=mobile][mask*=mobile-32]:before {
@@ -135,7 +138,7 @@
 }
 #app-mount foreignObject[mask*=mobile][mask*=mobile-80]:after {
   top: 100%;
-  right: 0;
+  right: -15px;
 }
 #app-mount foreignObject[mask*=mobile]:before {
   content: "";
@@ -144,9 +147,7 @@
   height: 30px;
   width: 30px;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
   display: block;
   position: absolute;
 }
@@ -158,9 +159,7 @@
   width: 12px;
   height: 16px;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
   background: var(--rs-online-color);
   z-index: 1;
 }
